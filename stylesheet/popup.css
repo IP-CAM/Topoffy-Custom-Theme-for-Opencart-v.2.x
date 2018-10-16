@@ -1,0 +1,25 @@
+/**
+ * product image
+ */
+
+.product-image {
+  clear: both;
+  list-style: none;
+  margin-top: 15px;
+  margin-left: -15px;
+  margin-bottom: 30px;
+  overflow: auto;
+  padding: 0;
+}
+.product-image > li {
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
+.product-image > li:first-child,
+.product-image > li:nth-child(2) {
+  margin-left: 15px;
+}
+.product-image img {
+  display: block;
+  width: 100%;
+}
