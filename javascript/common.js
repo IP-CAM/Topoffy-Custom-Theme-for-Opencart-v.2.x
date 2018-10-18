@@ -68,6 +68,16 @@ $(document).ready(function() {
     }
   });
 
+    $('.icon-cart').on('click', function(e) {
+        e.preventDefault();
+        var F = $('.sidebar-cart');
+        if (F.length > 0) {
+            F.addClass('open');
+            $('.site-overlay').css({ 'visibility': 'visible', 'opacity': '1' });
+            return false;
+        }
+    });
+
   $('.icon-search').on('click', function(e) {
     e.preventDefault();
     var F = $('.sidebar-search');

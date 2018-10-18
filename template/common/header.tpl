@@ -78,15 +78,9 @@ $(window).scroll(function () {
   <nav class="navbar navbar-default navbar-static-top">
     <div class="<?php echo $container ?: 'container-fluid'; ?>">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
         <?php if ($logo) { ?>
           <?php if ($home == $og_url) { ?>
-            <img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" />
+            <div class="navbar-brand"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" /></div>
           <?php } else { ?>
             <a href="<?php echo $home; ?>" class="navbar-brand"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" /></a>
           <?php } ?>
@@ -94,17 +88,33 @@ $(window).scroll(function () {
         <span class="h1-logo"><a href="<?php echo $home; ?>"><?php echo $name; ?></a></span>
         <?php } ?>
       </div>
+
+      <div class="navbar-tail">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <ul class="list-inline text-right header-right-menu">
+          <li><p class="header-phone">(999) 999-99-99</p></li>
+          <li><a href="#" class="icon-search"><i class="material-icons">search</i></a></li>
+          <li><a href="#" class="icon-cart"><i class="material-icons">shopping_cart</i></a></li>
+          <li><a href="#" class="icon-account"><i class="material-icons">person</i></a></li>
+        </ul>
+      </div>
+
       <div class="navbar-collapse collapse">
         <?php if ($categories) { ?>
         <ul class="nav navbar-nav">
           <?php foreach ($categories as $category) { ?>
           <?php if ($category['children']) { ?>
-          <li class="dropdown"><a href="<?php echo $category['href']; ?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo $category['name']; ?> <i class="fa fa-angle-down"></i></a>
+          <li class="dropdown fullwidth"><a href="<?php echo $category['href']; ?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo $category['name']; ?> <i class="fa fa-angle-down"></i></a>
             <span class="dropdown-triangle"></span>
             <div class="dropdown-menu animated fadeInUp">
               <div class="dropdown-inner">
                 <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
-                <ul class="list-unstyled">
+                <ul class="list-unstyled flex">
                   <?php foreach ($children as $child) { ?>
                   <?php if (isset($child['sub_children']) && $child['sub_children']) { ?>
                     <li><a href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?><i class="fa fa-angle-right pull-right"></i></a>
@@ -125,10 +135,13 @@ $(window).scroll(function () {
                     <li><a href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></li>
                   <?php } ?>
                   <?php } ?>
+
+                  <li class="fillend"><a href="<?php echo $category['href']; ?>" class="see-all"><?php echo $text_all; ?> <?php echo $category['name']; ?></a></li>
+
                 </ul>
                 <?php } ?>
               </div>
-              <a href="<?php echo $category['href']; ?>" class="see-all"><?php echo $text_all; ?> <?php echo $category['name']; ?></a> </div>
+              </div>
           </li>
           <?php } else { ?>
           <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
@@ -136,11 +149,6 @@ $(window).scroll(function () {
           <?php } ?>
         </ul>
         <?php } ?>
-        <ul class="list-inline text-right">
-          <li><a href="#" class="icon-search"><i class="material-icons">search</i></a></li>
-          <li><?php echo $cart; ?></li>
-          <li><a href="#" class="icon-account"><i class="material-icons">person</i></a></li>
-        </ul>
       </div>
     </div>
   </nav>
@@ -184,5 +192,41 @@ $(window).scroll(function () {
   <span class="close-sidebar"><i class="material-icons">close</i></span>
   <div class="inner">
     <?php echo $search; ?>
+  </div>
+</div>
+
+<div class="sidebar sidebar-cart">
+  <span class="close-sidebar"><i class="material-icons">close</i></span>
+  <div class="inner">
+    <?php echo $cart; ?>
+
+    <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+          <tr>
+            <td class="text-left"><?php echo $column_image; ?></td>
+            <td class="text-left"><?php echo $column_name; ?></td>
+            <td class="text-right"><?php echo $column_price; ?></td>
+          </tr>
+          </thead>
+          <tbody>
+          <?php foreach ($products as $product) { ?>
+          <tr>
+            <td class="text-left"><?php if ($product['thumb']) { ?>
+              <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a>
+              <?php } ?></td>
+            <td class="text-left">
+              <a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
+            </td>
+            <td class="text-right"><?php echo $product['price']; ?></td>
+          </tr>
+          <?php } ?>
+          </tbody>
+        </table>
+      </div>
+    </form>
+
+
   </div>
 </div>
