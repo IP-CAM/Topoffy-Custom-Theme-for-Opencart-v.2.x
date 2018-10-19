@@ -199,34 +199,5 @@ $(window).scroll(function () {
   <span class="close-sidebar"><i class="material-icons">close</i></span>
   <div class="inner">
     <?php echo $cart; ?>
-
-    <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
-      <div class="table-responsive">
-        <table class="table">
-          <thead>
-          <tr>
-            <td class="text-left"><?php echo $column_image; ?></td>
-            <td class="text-left"><?php echo $column_name; ?></td>
-            <td class="text-right"><?php echo $column_price; ?></td>
-          </tr>
-          </thead>
-          <tbody>
-          <?php foreach ($products as $product) { ?>
-          <tr>
-            <td class="text-left"><?php if ($product['thumb']) { ?>
-              <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a>
-              <?php } ?></td>
-            <td class="text-left">
-              <a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
-            </td>
-            <td class="text-right"><?php echo $product['price']; ?></td>
-          </tr>
-          <?php } ?>
-          </tbody>
-        </table>
-      </div>
-    </form>
-
-
   </div>
 </div>
