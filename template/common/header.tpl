@@ -113,6 +113,7 @@ $(window).scroll(function () {
             <span class="dropdown-triangle"></span>
             <div class="dropdown-menu animated fadeInUp">
               <div class="dropdown-inner">
+                <?php $category['column'] = 1; ?>
                 <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
                 <ul class="list-unstyled flex">
                   <?php foreach ($children as $child) { ?>

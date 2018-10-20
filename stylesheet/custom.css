@@ -1,4 +1,10 @@
 
+.navbar-brand > img {
+    max-height: 46px;
+}
+
+
+
 .slider-html-thumb-cont {
     position: absolute;
     width: 100%;
@@ -41,6 +47,7 @@
 
 .navbar-nav > li.dropdown.fullwidth > .dropdown-menu {
     width: 100%;
+    overflow-y: auto;
 }
 
 li.dropdown.fullwidth .dropdown-inner {
