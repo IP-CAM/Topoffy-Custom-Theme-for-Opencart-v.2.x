@@ -565,12 +565,17 @@ $('#button-cart').on('click', function() {
           // Update cart quantity
           $('#cart-total').text(json.total);
 
+            // Refresh cart
+            // console.log(json);
+            $('#sidebar-cart').load('index.php?route=common/cart/info');
+
           updateCartQuantity();
+          $('.icon-cart').click();
 
         }, 100);
 
         // Show notification
-        notify(json.success);
+        // notify(json.success);
       }
     },
     error: function(xhr, ajaxOptions, thrownError) {

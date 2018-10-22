@@ -1,7 +1,7 @@
 <h3><?php echo $heading_title; ?></h3>
 <div class="row">
   <?php foreach ($products as $product) { ?>
-  <div class="product-layout product-grid col-xs-6 col-sm-3">
+  <div class="product-layout product-grid col-xs-6 col-sm-3" id="product-<?php echo $product['product_id']; ?>">
     <div class="product-thumb">
       <div class="image">
         <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a>

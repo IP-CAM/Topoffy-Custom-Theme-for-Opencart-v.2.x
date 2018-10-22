@@ -22,6 +22,10 @@
 }
 
 
+.icon-cart {
+    position: relative;
+}
+
 .navbar-header {
     float: left;
 }
@@ -86,4 +90,24 @@ li.dropdown.fullwidth .dropdown-inner > ul > li > a {
 .header-phone {
     font-size: 24px;
     margin-top: -5px;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.btn-info {
+    color: #46b8da;
+}
+
+
+
+
+.anifly {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: #000000;
+    z-index: 2000;
+    opacity: 1;
 }

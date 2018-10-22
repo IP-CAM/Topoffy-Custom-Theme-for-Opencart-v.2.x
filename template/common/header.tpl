@@ -99,7 +99,12 @@ $(window).scroll(function () {
         <ul class="list-inline text-right header-right-menu">
           <li><p class="header-phone">(999) 999-99-99</p></li>
           <li><a href="#" class="icon-search"><i class="material-icons">search</i></a></li>
-          <li><a href="#" class="icon-cart"><i class="material-icons">shopping_cart</i></a></li>
+          <li>
+            <a href="#" class="icon-cart">
+              <i class="material-icons">shopping_cart</i>
+              <span id="cart-total"><?php echo $text_items; ?></span>
+            </a>
+          </li>
           <li><a href="#" class="icon-account"><i class="material-icons">person</i></a></li>
         </ul>
       </div>
@@ -159,6 +164,7 @@ $(window).scroll(function () {
   <div class="inner">
     <div class="account">
       <h3><?php echo $text_account; ?></h3>
+      <p class="bold"><?php echo $text_account_desc; ?></p>
       <ul class="list-unstyled">
         <?php if ($logged) { ?>
         <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
@@ -183,8 +189,10 @@ $(window).scroll(function () {
     </div>
     <?php if ($telephone) { ?>
     <div class="telephone">
-      <h3><?php echo $text_telephone; ?></h3>
-      <a href="<?php echo $contact; ?>"><?php echo $telephone; ?></a>
+      <h3><?php echo $text_contact; ?></h3>
+      <p><a href="<?php echo $contact; ?>"><?php echo $telephone; ?></a></p>
+      <p><a href="">magazin@mail.ru</a></p>
+      <p class="bold"><?php echo $address; ?></p>
     </div>
     <?php } ?>
   </div>
@@ -198,7 +206,9 @@ $(window).scroll(function () {
 
 <div class="sidebar sidebar-cart">
   <span class="close-sidebar"><i class="material-icons">close</i></span>
-  <div class="inner">
+  <div class="inner" id="sidebar-cart">
     <?php echo $cart; ?>
   </div>
+  <a class="btn btn-block btn-primary btn-xs-block" href="index.php?route=checkout/cart">Оформить заказ</a>
+  <button class="btn btn-block btn-info" type="button">Купить в один клик</button>
 </div>
