@@ -40,16 +40,18 @@ function updateCartQuantity() {
 
 function productFly (pid) {
 
-    let pos = $('#product-' + pid + " .image").offset();
-    let w = $('#product-' + pid + " .image").width();
-    let h = $('#product-' + pid + " .image").height();
+    let prod = $('#product-' + pid + " .image img");
+    let pos = prod.offset();
+    let w = prod.width();
+    let h = prod.height();
 
-    let finpos = $("#cart-total").offset();
+    let finpos = $("#icon-cart").offset();
 
-    let fly = $("<div>", {
+    let fly = $("<img>", {
         text: 'fly',
         style: 'left:' + pos.left + 'px; top:' + pos.top + "px; width:" + w + "px; height:" + h + "px;",
-        class: 'anifly'
+        class: 'anifly',
+        src: prod.attr('src')
     });
 
     $("body").append(fly);
@@ -90,7 +92,7 @@ $(document).ready(function () {
     // sidebar
     $('.icon-account').on('click', function (e) {
         e.preventDefault();
-        var F = $('.sidebar-account');
+        let F = $('.sidebar-account');
         if (F.length > 0) {
             F.addClass('open');
             $('.site-overlay').css({'visibility': 'visible', 'opacity': '1'});
@@ -100,7 +102,7 @@ $(document).ready(function () {
 
     $('.icon-cart').on('click', function (e) {
         e.preventDefault();
-        var F = $('.sidebar-cart');
+        let F = $('.sidebar-cart');
         if (F.length > 0) {
             F.addClass('open');
             $('.site-overlay').css({'visibility': 'visible', 'opacity': '1'});
@@ -110,13 +112,25 @@ $(document).ready(function () {
 
     $('.icon-search').on('click', function (e) {
         e.preventDefault();
-        var F = $('.sidebar-search');
+        let F = $('.sidebar-search');
         if (F.length > 0) {
             F.addClass('open');
             $('.site-overlay').css({'visibility': 'visible', 'opacity': '1'});
             return false;
         }
     });
+
+    $('.btn-fastorder').on('click', function (e) {
+        $('.close-sidebar, .site-overlay').click();
+        e.preventDefault();
+        let F = $('.sidebar-fastorder');
+        if (F.length > 0) {
+            F.addClass('open');
+            $('.site-overlay').css({'visibility': 'visible', 'opacity': '1'});
+            return false;
+        }
+    });
+
 
     $('.close-sidebar, .site-overlay').on('click', function () {
         $('.site-overlay').css({'visibility': 'hidden', 'opacity': '0'});

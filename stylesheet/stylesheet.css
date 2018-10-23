@@ -584,7 +584,8 @@ header.sticky {
 }
 .sidebar-account.open,
 .sidebar-search.open,
-.sidebar-cart.open {
+.sidebar-cart.open,
+.sidebar-fastorder.open {
   right: 0 !important;
   border-left: 1px solid #eeeff2;
 }

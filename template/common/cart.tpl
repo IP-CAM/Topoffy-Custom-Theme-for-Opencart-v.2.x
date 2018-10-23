@@ -1,4 +1,4 @@
-<div id="cart">
+<div id="cart" style="display: none;">
   <a href="<?php echo $cart; ?>" class="cart-icon">
     <i class="material-icons">shopping_cart</i>
   </a>

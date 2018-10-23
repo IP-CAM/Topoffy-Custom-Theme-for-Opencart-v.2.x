@@ -100,7 +100,7 @@ $(window).scroll(function () {
           <li><p class="header-phone">(999) 999-99-99</p></li>
           <li><a href="#" class="icon-search"><i class="material-icons">search</i></a></li>
           <li>
-            <a href="#" class="icon-cart">
+            <a href="#" class="icon-cart" id="icon-cart">
               <i class="material-icons">shopping_cart</i>
               <span id="cart-total"><?php echo $text_items; ?></span>
             </a>
@@ -210,5 +210,14 @@ $(window).scroll(function () {
     <?php echo $cart; ?>
   </div>
   <a class="btn btn-block btn-primary btn-xs-block" href="index.php?route=checkout/cart">Оформить заказ</a>
-  <button class="btn btn-block btn-info" type="button">Купить в один клик</button>
+  <button class="btn btn-block btn-info btn-fastorder" type="button">Купить в один клик</button>
+</div>
+
+
+<div class="sidebar sidebar-fastorder">
+  <span class="close-sidebar"><i class="material-icons">close</i></span>
+  <div class="inner" id="sidebar-fastorder">
+    Быстрый заказ
+  </div>
+  <button class="btn btn-block btn-info" type="button">Подтвердить</button>
 </div>
