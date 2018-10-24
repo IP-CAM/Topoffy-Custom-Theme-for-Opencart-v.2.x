@@ -210,6 +210,11 @@ $(window).scroll(function () {
     <?php echo $cart; ?>
   </div>
   <a class="btn btn-block btn-primary btn-xs-block" href="index.php?route=checkout/cart">Оформить заказ</a>
+
+  <!-- Button fastorder -->
+  <?php  echo $fastorder;?>
+  <!-- END :  button fastorder -->
+
   <button class="btn btn-block btn-info btn-fastorder" type="button">Купить в один клик</button>
 </div>
 
