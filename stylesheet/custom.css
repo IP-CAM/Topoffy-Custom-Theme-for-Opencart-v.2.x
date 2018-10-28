@@ -111,3 +111,30 @@ li.dropdown.fullwidth .dropdown-inner > ul > li > a {
     z-index: 2000;
     opacity: 1;
 }
+
+
+
+.console {
+    position: absolute;
+    z-index: 10000;
+    left: 1600px;
+    top: 100px;
+    width: 1200px;
+    height: 600px;
+    border: 1px solid blue;
+    background: #e6ffff;
+    color: black;
+    opacity: .5;
+    transition: all .3s ease-in-out;
+    overflow-y: scroll;
+}
+.console:hover {
+    left: 200px;
+    opacity: 1;
+}
+
+
+
+.sidebar .fields-group {
+    margin-bottom: 25px;
+}

@@ -350,6 +350,8 @@
               </div>
               <br />
 
+              <button type="button" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-block btn-info btn-callme">Напишите нам!</button>
+
               <button type="button" id="button-cart" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-block btn-primary"><?php echo $button_cart; ?></button>
             </div>
             <?php if ($minimum > 1) { ?>

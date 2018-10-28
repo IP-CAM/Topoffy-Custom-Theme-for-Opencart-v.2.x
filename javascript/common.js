@@ -131,6 +131,17 @@ $(document).ready(function () {
         }
     });
 
+    $('.btn-callme').on('click', function (e) {
+        $('.close-sidebar, .site-overlay').click();
+        e.preventDefault();
+        let F = $('.sidebar-callme');
+        if (F.length > 0) {
+            F.addClass('open');
+            $('.site-overlay').css({'visibility': 'visible', 'opacity': '1'});
+            return false;
+        }
+    });
+
 
     $('.close-sidebar, .site-overlay').on('click', function () {
         $('.site-overlay').css({'visibility': 'hidden', 'opacity': '0'});
