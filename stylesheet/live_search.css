@@ -23,10 +23,10 @@
 	clear:both;
 }
 #live-search ul li:nth-child(even) {
-	background-color: #FAFAFA;
+	/*background-color: #FAFAFA;*/
 }
 #live-search ul li:hover {
-	background-color:#F0F7FA;
+	/*background-color:#F0F7FA;*/
 }
 #live-search ul li a{
 	text-decoration: none;

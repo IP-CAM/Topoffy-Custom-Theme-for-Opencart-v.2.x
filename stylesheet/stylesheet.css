@@ -500,7 +500,9 @@ header.sticky {
 .navbar .nav > li > a:focus {
   border: none;
 }
+/* Here we can remove hover in menu! */
 @media (min-width: 768px) {
+  .navbar .dropdown:hover .dropdown-menu,
   .navbar ul li ul li:hover > .sub-dropdown-menu {
     display: block;
   }

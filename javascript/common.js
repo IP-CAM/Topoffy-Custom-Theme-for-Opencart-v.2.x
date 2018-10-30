@@ -413,9 +413,16 @@ var cart = {
             success: function (json) {
                 // need to set timeout otherwise it wont update the total
                 setTimeout(function () {
+
+                    // Update cart quantity
                     $('#cart-total').text(json.total);
 
+                    // Refresh cart
+                    // console.log(json);
+                    $('#sidebar-cart').load('index.php?route=common/cart/info');
+
                     updateCartQuantity();
+                    $('.icon-cart').click();
 
                 }, 100);
 

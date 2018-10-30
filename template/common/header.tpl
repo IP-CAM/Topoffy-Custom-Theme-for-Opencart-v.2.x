@@ -105,7 +105,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <ul class="list-inline text-right header-right-menu">
-                    <li><p class="header-phone">(999) 999-99-99</p></li>
+                    <li><p class="header-phone"><?php echo $contact_info['phone_1'] ?></p></li>
                     <li><a href="#" class="icon-search"><i class="material-icons">search</i></a></li>
                     <li>
                         <a href="#" class="icon-cart" id="icon-cart">
@@ -128,13 +128,17 @@
                         <span class="dropdown-triangle"></span>
                         <div class="dropdown-menu animated fadeInUp">
                             <div class="dropdown-inner">
+                                <!-- Output in 1 column always -->
                                 <?php $category['column'] = 1; ?>
                                 <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
                                 <ul class="list-unstyled flex">
                                     <?php foreach ($children as $child) { ?>
                                     <?php if (isset($child['sub_children']) && $child['sub_children']) { ?>
-                                    <li><a href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?><i
-                                                    class="fa fa-angle-right pull-right"></i></a>
+                                    <li>
+                                        <a href="<?php echo $child['href']; ?>">
+                                            <span><?php echo $child['name']; ?></span>
+                                            <i class="fa fa-angle-right pull-right"></i>
+                                        </a>
                                         <div class="sub-dropdown-menu animated fadeInUp">
                                             <div class="sub-dropdown-inner">
                                                 <?php foreach (array_chunk($child['sub_children'], ceil(count($child['sub_children']) / $child['column'])) as $sub_children) { ?>
@@ -152,12 +156,18 @@
                                         </div>
                                     </li>
                                     <?php } else { ?>
-                                    <li><a href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></li>
+                                    <li>
+                                        <a href="<?php echo $child['href']; ?>" style="background-image: url('image/<?php echo $child['image']; ?>')">
+                                            <span><?php echo $child['name']; ?></span>
+                                        </a>
+                                    </li>
                                     <?php } ?>
                                     <?php } ?>
 
-                                    <li class="fillend"><a href="<?php echo $category['href']; ?>"
-                                                           class="see-all"><?php echo $text_all; ?> <?php echo $category['name']; ?></a>
+                                    <li class="fillend">
+                                        <a href="<?php echo $category['href']; ?>" class="see-all">
+                                            <span><?php echo $text_all; ?> <?php echo $category['name']; ?></span>
+                                        </a>
                                     </li>
 
                                 </ul>
@@ -203,14 +213,12 @@
         <div class="language">
             <?php echo $language; ?>
         </div>
-        <?php if ($telephone) { ?>
         <div class="telephone">
             <h3><?php echo $text_contact; ?></h3>
-            <p><a href="<?php echo $contact; ?>"><?php echo $telephone; ?></a></p>
-            <p><a href="">magazin@mail.ru</a></p>
-            <p class="bold"><?php echo $address; ?></p>
+            <p><a href="<?php echo $contact; ?>"><?php echo $contact_info['phone_1'] ?></a></p>
+            <p><a href="mailto: <?php echo $contact_info['email'] ?>"><?php echo $contact_info['email'] ?></a></p>
+            <p class="bold"><?php echo $contact_info['address'] ?></p>
         </div>
-        <?php } ?>
     </div>
 </div>
 
@@ -224,11 +232,14 @@
 <div class="sidebar sidebar-cart">
     <span class="close-sidebar"><i class="material-icons">close</i></span>
     <div class="inner" id="sidebar-cart">
-        <?php echo $cart; ?>
-    </div>
-    <a class="btn btn-block btn-primary btn-xs-block" href="index.php?route=checkout/cart">Оформить заказ</a>
 
-    <button class="btn btn-block btn-info btn-fastorder" type="button">Купить в один клик</button>
+        <?php echo $cart; ?>
+
+    </div>
+    <div class="inner">
+        <a class="btn btn-block btn-primary btn-xs-block" href="index.php?route=checkout/cart">Оформить заказ</a>
+        <button class="btn btn-block btn-info btn-fastorder" type="button">Купить в один клик</button>
+    </div>
 </div>
 
 <div class="sidebar sidebar-callme">
@@ -277,7 +288,7 @@
         </div>
 
         <div class="fields-group hidden">
-            <label for="city-ch"><span class="required">*</span>  Town
+            <label for="city-ch"><span class="required">*</span> Town
                 :</label><br>
             <input type="text" id="city-ch" name="city" value="eeee"
                    class="form-control large-field">
@@ -292,9 +303,9 @@
 
         </div>
 
+        <button id="btn-fastcheckout" class="btn btn-block btn-info" type="button">Подтвердить</button>
 
     </div>
-    <button id="btn-fastcheckout" class="btn btn-block btn-info" type="button">Подтвердить</button>
 
     <script>
         $('#btn-fastcheckout').on('click', function () {

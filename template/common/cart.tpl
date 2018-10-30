@@ -4,22 +4,25 @@
   </a>
 </div>
 
-<form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data">
+<form action="" method="post" enctype="multipart/form-data">
   <div class="table-responsive">
-    <table class="table">
-      <tbody>
+    <ul class="sidebar_cart">
       <?php foreach ($products as $product) { ?>
-      <tr>
-        <td class="text-left"><?php if ($product['thumb']) { ?>
+      <li class="cart_line">
+        <div class="cart_image">
+          <?php if ($product['thumb']) { ?>
           <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a>
-          <?php } ?></td>
-        <td class="text-left">
-          <a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
-        </td>
-        <td class="text-right"><?php echo $product['price']; ?></td>
-      </tr>
+          <?php } ?>
+        </div>
+        <div class="cart_desc">
+          <div class="name"><?php echo $product['name']; ?></div>
+          <div class="price"><?php echo $product['price']; ?></div>
+        </div>
+        <div class="cart_delete" onclick="cart.remove('<?php echo $product['cart_id']; ?>');">
+          <i class="material-icons">close</i>
+        </div>
+      </li>
       <?php } ?>
-      </tbody>
-    </table>
+    </ul>
   </div>
 </form>

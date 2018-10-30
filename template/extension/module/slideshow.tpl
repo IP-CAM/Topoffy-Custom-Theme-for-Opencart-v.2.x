@@ -1,36 +1,20 @@
 <div id="slideshow<?php echo $module; ?>" class="owl-carousel" style="opacity: 1;">
-    <?php foreach ($banners as $banner) { ?>
-    <div class="item slide">
+    <?php foreach ($banners as $key => $banner) { ?>
+    <div class="item slide c<?php echo ($key + 1) ?>">
         <?php if ($banner['link']) { ?>
         <a href="<?php echo $banner['link']; ?>"><img src="<?php echo $banner['image']; ?>"
                                                       alt="<?php echo $banner['title']; ?>" class="img-responsive"/></a>
         <?php } else { ?>
         <img src="<?php echo $banner['image']; ?>" alt="<?php echo $banner['title']; ?>" class="img-responsive"/>
         <?php } ?>
-        <div class="slider-html-thumb-cont">
-            <div class="container">
-                <div class="row slider-html-thumb-row">
-                    <div class="col-sm-4">
-                        <div class="slider-html-thumb">
 
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="slider-html-thumb">
+        <?php echo $slidethumb; ?>
 
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="slider-html-thumb">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <?php } ?>
+
 </div>
+
 <script type="text/javascript"><!--
     $('#slideshow<?php echo $module; ?>').owlCarousel({
         items: 6,
