@@ -122,9 +122,11 @@
                 <ul class="nav navbar-nav">
                     <?php foreach ($categories as $category) { ?>
                     <?php if ($category['children']) { ?>
-                    <li class="dropdown fullwidth"><a href="<?php echo $category['href']; ?>" class="dropdown-toggle"
-                                                      data-toggle="dropdown"><?php echo $category['name']; ?> <i
-                                    class="fa fa-angle-down"></i></a>
+                    <li class="dropdown fullwidth">
+                        <a href="<?php echo $category['href']; ?>" class="dropdown-toggle" data-toggle="dropdown">
+                            <?php echo $category['name']; ?>
+                            <i class="fa fa-angle-down"></i>
+                        </a>
                         <span class="dropdown-triangle"></span>
                         <div class="dropdown-menu animated fadeInUp">
                             <div class="dropdown-inner">
@@ -172,8 +174,14 @@
 
                                 </ul>
                                 <?php } ?>
+
                             </div>
+
+                            <div class="menu-left"><i class="material-icons">chevron_left</i></div>
+                            <div class="menu-right"><i class="material-icons">chevron_right</i></div>
+
                         </div>
+
                     </li>
                     <?php } else { ?>
                     <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
@@ -236,7 +244,7 @@
         <?php echo $cart; ?>
 
     </div>
-    <div class="inner">
+    <div id="cart_buttons" class="inner">
         <a class="btn btn-block btn-primary btn-xs-block" href="index.php?route=checkout/cart">Оформить заказ</a>
         <button class="btn btn-block btn-info btn-fastorder" type="button">Купить в один клик</button>
     </div>

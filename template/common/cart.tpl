@@ -4,6 +4,8 @@
   </a>
 </div>
 
+<?php if ($products) { ?>
+
 <form action="" method="post" enctype="multipart/form-data">
   <div class="table-responsive">
     <ul class="sidebar_cart">
@@ -26,3 +28,12 @@
     </ul>
   </div>
 </form>
+
+<?php } else { ?>
+
+<div class="empty_cart">
+  <span>Ваша корзина пуста.</span><br/>
+  <span>Добавляйте товар с помощью кнопки "купить"</span>
+</div>
+
+<?php }; ?>

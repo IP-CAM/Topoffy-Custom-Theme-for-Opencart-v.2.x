@@ -2,6 +2,13 @@
 <project version="4">
   <component name="PublishConfigData" serverName="topoffy.ru">
     <serverData>
+      <paths name="ocStore Local">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="topoffy.ru">
         <serverdata>
           <mappings>

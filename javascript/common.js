@@ -27,13 +27,16 @@ function updateCartQuantity() {
     var s = $('#cart-total').text();
     var re = /\d+/;
     var qty = s.match(re);
+    //alert(qty);
 
     $('#cart-total').text(qty);
 
-    if ($('#cart-total').text() !== "") {
+    if (($('#cart-total').text() !== "") && $('#cart-total').text() !== "0") {
         $('#cart-total').css("display", "block");
+        $('#cart_buttons').removeClass('hidden');
     } else {
         $('#cart-total').css("display", "none");
+        $('#cart_buttons').addClass('hidden');
     }
 
 }
@@ -273,6 +276,12 @@ $(document).ready(function () {
     // dropdown menu
     $('.dropdown-menu input').click(function (e) {
         e.stopPropagation();
+    });
+
+    $('.nav > .dropdown > .dropdown-toggle').click(function() {
+        if ($(window).width() > 767) {
+            window.location = this.href;
+        }
     });
 
     // back top

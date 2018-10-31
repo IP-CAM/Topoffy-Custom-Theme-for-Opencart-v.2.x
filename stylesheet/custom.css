@@ -8,6 +8,9 @@
     padding-bottom: 18px;
 }
 
+.hidden {
+    display: none;
+}
 
 .btn {
     padding: 10px 15px;
@@ -32,6 +35,7 @@
     transition: all .3s ease-in-out;
     padding: 10px;
     position: relative;
+    overflow: hidden;
 }
 
 .slider-html-thumb :before {
@@ -116,7 +120,30 @@
 
 li.dropdown.fullwidth .dropdown-inner {
     display: block;
+    position: relative;
 }
+
+li.dropdown.fullwidth .menu-left {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: rgba(255,255,255,0.3);
+    left: 10px;
+    top: 120px;
+    cursor: pointer;
+}
+li.dropdown.fullwidth .menu-right {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: rgba(255,255,255,0.3);
+    right: 10px;
+    top: 120px;
+    cursor: pointer;
+}
+
 
 li.dropdown.fullwidth .dropdown-inner > ul.flex {
     min-height: 100px;
@@ -134,6 +161,8 @@ li.dropdown.fullwidth .dropdown-inner > ul.flex {
 li.dropdown.fullwidth .dropdown-inner > ul > li > a {
     height: 250px;
     min-width: 100px;
+    width: 120px;
+    padding: 10px;
     position: relative;
     color: black;
     background: #FFF;
@@ -159,11 +188,22 @@ li.dropdown.fullwidth .dropdown-inner > ul > li > a span {
 li.dropdown.fullwidth .dropdown-inner > ul > li > a:hover {
     background-size: auto 270px;
 }
+li.dropdown.fullwidth .dropdown-inner > ul > li > a span {
+    color: black;
+    display: inline;
+    opacity: 1;
 
+}
 
 .fillend {
     flex-grow: 10;
 }
+
+.navbar .sub-dropdown-menu {
+    display: none !important;
+}
+
+
 
 .header-right-menu {
     float: right;
@@ -369,4 +409,10 @@ ul.sidebar_cart li.cart_line .cart_desc .price {
 }
 ul.sidebar_cart li.cart_line .cart_delete {
     cursor: pointer;
+}
+
+
+.empty_cart {
+    text-align: center;
+    font-size: 16px;
 }
