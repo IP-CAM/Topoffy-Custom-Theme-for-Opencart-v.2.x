@@ -78,7 +78,7 @@
 <body class="<?php echo $class; ?>">
 <div class="loader"></div>
 <div class="site-overlay"></div>
-<header>
+<header class="always-sticky">
     <nav class="navbar navbar-default navbar-static-top">
         <div class="<?php echo $container ?: 'container-fluid'; ?>">
             <div class="navbar-header">
@@ -129,6 +129,7 @@
                         </a>
                         <span class="dropdown-triangle"></span>
                         <div class="dropdown-menu animated fadeInUp">
+
                             <div class="dropdown-inner">
                                 <!-- Output in 1 column always -->
                                 <?php $category['column'] = 1; ?>
@@ -177,7 +178,7 @@
 
                             </div>
 
-                            <div class="menu-left"><i class="material-icons">chevron_left</i></div>
+                            <div class="menu-left hidden"><i class="material-icons">chevron_left</i></div>
                             <div class="menu-right"><i class="material-icons">chevron_right</i></div>
 
                         </div>
@@ -193,6 +194,9 @@
         </div>
     </nav>
 </header>
+
+<div class="dumb"></div>
+
 <div class="sidebar sidebar-account">
     <span class="close-sidebar"><i class="material-icons">close</i></span>
     <div class="inner">
@@ -244,9 +248,15 @@
         <?php echo $cart; ?>
 
     </div>
-    <div id="cart_buttons" class="inner">
-        <a class="btn btn-block btn-primary btn-xs-block" href="index.php?route=checkout/cart">Оформить заказ</a>
-        <button class="btn btn-block btn-info btn-fastorder" type="button">Купить в один клик</button>
+    <div class="inner cart-footer">
+        <div id="cart_buttons" class="cart-buttons">
+            <a class="btn btn-block btn-primary btn-xs-block" href="index.php?route=checkout/cart">Оформить заказ</a>
+            <button class="btn btn-block btn-info btn-fastorder" type="button">Купить в один клик</button>
+        </div>
+        <div class="cart-info">
+            Итого:<br/>
+            <span id="cart-sum"><?php echo $text_totals." ".$this->session->data['currency']; ?></span>
+        </div>
     </div>
 </div>
 

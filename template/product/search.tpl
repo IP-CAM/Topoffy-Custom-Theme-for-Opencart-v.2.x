@@ -113,7 +113,7 @@
       </div>
       <div class="row">
         <?php foreach ($products as $product) { ?>
-        <div class="product-layout product-grid col-xs-12">
+        <div id="product-<?php echo $product['product_id']; ?>" class="product-layout product-grid col-xs-12">
           <div class="product-thumb">
             <div class="image">
               <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a>

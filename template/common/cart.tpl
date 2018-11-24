@@ -6,6 +6,8 @@
 
 <?php if ($products) { ?>
 
+<h2>Корзина</h2>
+
 <form action="" method="post" enctype="multipart/form-data">
   <div class="table-responsive">
     <ul class="sidebar_cart">
@@ -17,8 +19,19 @@
           <?php } ?>
         </div>
         <div class="cart_desc">
-          <div class="name"><?php echo $product['name']; ?></div>
-          <div class="price"><?php echo $product['price']; ?></div>
+            <div class="name"><?php echo $product['name']; ?></div>
+            <?php if ($product['option']) { ?>
+            <?php foreach ($product['option'] as $option) { ?>
+            <small><?php echo $option['name']; ?>: <?php echo $option['value']; ?></small>
+            <?php } ?>
+            <?php } ?>
+
+            <div class="price-change">
+                <div class="price"><?php echo $product['price']; ?></div>
+                <div class="mid">*</div>
+                <input type="text" name="quantity[<?php echo $product['cart_id']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" class="form-control" />
+                <div>шт.</div>
+            </div>
         </div>
         <div class="cart_delete" onclick="cart.remove('<?php echo $product['cart_id']; ?>');">
           <i class="material-icons">close</i>
