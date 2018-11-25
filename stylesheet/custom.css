@@ -479,10 +479,16 @@ ul.sidebar_cart li.cart_line {
     width: 100%;
     padding: 10px;
     border: 2px solid white;
+    opacity: 1;
+    margin-top: 0;
     transition: all .3s ease-in-out;
 }
 ul.sidebar_cart li.cart_line:hover {
     border: 2px solid black;
+}
+ul.sidebar_cart li.cart_line.del {
+    margin-top: -100px;
+    opacity: 0;
 }
 ul.sidebar_cart li.cart_line .cart_image {
     margin: 5px 10px;

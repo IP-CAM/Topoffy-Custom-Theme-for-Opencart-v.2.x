@@ -23,6 +23,7 @@ function getURLVar(key) {
 }
 
 // count shopping cart products
+// and count total cost in cart
 function updateCartQuantity() {
     var s = $('#cart-total').text();
     var re = /\d+/;
@@ -39,6 +40,11 @@ function updateCartQuantity() {
         $('#cart_buttons').addClass('hidden');
     }
 
+    let c = $('#cart-sum').text();
+    re = /[\d|\s]+.00\s\S+/;
+    let tot = c.match(re);
+    //alert(tot);
+    $('#cart-sum').text(tot);
 }
 
 function productFly (pid) {
@@ -68,6 +74,10 @@ function productFly (pid) {
     }, 500, function() {
         fly.detach();
     });
+}
+
+function productDelete (pid) {
+    $('#cart-p' + pid).addClass("del");
 }
 
 function notify(text) {
@@ -391,6 +401,7 @@ var cart = {
 
                         // Update cart quantity
                         $('#cart-total').text(json.total);
+                        $('#cart-sum').text(json.total);
 
                         // Refresh cart
                         // console.log(json);
@@ -423,9 +434,11 @@ var cart = {
                 $('#cart > button').button('reset');
             },
             success: function (json) {
+
                 // need to set timeout otherwise it wont update the total
                 setTimeout(function () {
                     $('#cart-total').text(json.total);
+                    $('#cart-sum').text(json.total);
 
                     updateCartQuantity();
 
@@ -456,10 +469,13 @@ var cart = {
             },
             success: function (json) {
                 // need to set timeout otherwise it wont update the total
+                productDelete(key);
+
                 setTimeout(function () {
 
                     // Update cart quantity
                     $('#cart-total').text(json.total);
+                    $('#cart-sum').text(json.total);
 
                     // Refresh cart
                     // console.log(json);
@@ -468,7 +484,7 @@ var cart = {
                     updateCartQuantity();
                     $('.icon-cart').click();
 
-                }, 100);
+                }, 400);
 
                 if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
                     location = 'index.php?route=checkout/cart';

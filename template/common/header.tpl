@@ -255,7 +255,7 @@
         </div>
         <div class="cart-info">
             Итого:<br/>
-            <span id="cart-sum"><?php echo $text_totals." ".$this->session->data['currency']; ?></span>
+            <span id="cart-sum"><?php echo $text_totals; ?></span>
         </div>
     </div>
 </div>

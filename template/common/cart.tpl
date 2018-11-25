@@ -12,7 +12,7 @@
   <div class="table-responsive">
     <ul class="sidebar_cart">
       <?php foreach ($products as $product) { ?>
-      <li class="cart_line">
+      <li id="cart-p<?php echo $product['cart_id']; ?>" class="cart_line">
         <div class="cart_image">
           <?php if ($product['thumb']) { ?>
           <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a>
