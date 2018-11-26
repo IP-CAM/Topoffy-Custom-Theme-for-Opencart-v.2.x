@@ -414,5 +414,5 @@
 
 
 <div class="console hidden">
-    <?php print_r(get_defined_vars()); ?>
+    <?php //print_r(get_defined_vars()); ?>
 </div>

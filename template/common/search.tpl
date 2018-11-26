@@ -100,7 +100,7 @@
             var container = $('#live-search');
             if (!container.is(e.target) && container.has(e.target).length === 0)
             {
-                container.hide();
+                //container.hide();
             }
         });
     });

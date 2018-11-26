@@ -300,8 +300,25 @@ li.dropdown.fullwidth .dropdown-inner > ul > li > a span {
     font-weight: normal;
 }
 
+
+.sidebar-cart {
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+}
+
 .sidebar #sidebar-cart.inner {
     padding: 10px 30px !important;
+    overflow: auto;
+}
+.sidebar #sidebar-cart.inner::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+.sidebar #sidebar-cart.inner::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
 }
 
 .sidebar .fields-group {
@@ -493,6 +510,8 @@ ul.sidebar_cart li.cart_line.del {
 ul.sidebar_cart li.cart_line .cart_image {
     margin: 5px 10px;
     max-height: 80px;
+    width: 80px;
+    flex: 0 0 auto;
     overflow: hidden;
 }
 ul.sidebar_cart li.cart_line .cart_image img {
