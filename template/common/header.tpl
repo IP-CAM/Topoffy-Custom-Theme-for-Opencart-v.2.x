@@ -138,7 +138,7 @@
                                     <?php foreach ($children as $child) { ?>
                                     <?php if (isset($child['sub_children']) && $child['sub_children']) { ?>
                                     <li>
-                                        <a href="<?php echo $child['href']; ?>">
+                                        <a href="<?php echo $child['href']; ?>" style="background-image: url('image/<?php echo $child['image']; ?>')">
                                             <span><?php echo $child['name']; ?></span>
                                             <i class="fa fa-angle-right pull-right"></i>
                                         </a>
@@ -167,7 +167,7 @@
                                     <?php } ?>
                                     <?php } ?>
 
-                                    <li class="fillend">
+                                    <li class="fillend" style="background:">
                                         <a href="<?php echo $category['href']; ?>" class="see-all">
                                             <span><?php echo $text_all; ?> <?php echo $category['name']; ?></span>
                                         </a>
@@ -248,7 +248,7 @@
         <?php echo $cart; ?>
 
     </div>
-    <div class="inner cart-footer">
+    <div id="cart_footer" class="inner cart-footer">
         <div id="cart_buttons" class="cart-buttons">
             <a class="btn btn-block btn-primary btn-xs-block" href="index.php?route=checkout/cart">Оформить заказ</a>
             <button class="btn btn-block btn-info btn-fastorder" type="button">Купить в один клик</button>

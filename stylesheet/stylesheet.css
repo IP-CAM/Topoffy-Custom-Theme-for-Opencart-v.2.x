@@ -264,17 +264,18 @@ header .list-inline li {
 
 header.sticky {
   position: fixed;
-  top: -60px;
+  /*top: -60px;*/
+  top: 0;
   width: 100%;
   background-color: #fff;
   border-bottom: 1px solid #eeeff2;
   padding: 0;
-  -webkit-animation: slide 0.5s forwards;
+  /*-webkit-animation: slide 0.5s forwards;
   -moz-animation: slide 0.5s forwards;
   animation: slide 0.5s forwards;
   -webkit-animation-delay: 0s;
   -moz-animation-delay: 0s;
-  animation-delay: 0s;
+  animation-delay: 0s;*/
   z-index: 999;
 }
 @-webkit-keyframes slide {

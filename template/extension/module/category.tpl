@@ -22,8 +22,12 @@ $(document).ready(function() {
     var qty = $(this).text().match(/\(([^)]+)\)/);
     var name = $(this).text().replace(/\(\d+\)/g, "");
 
-    if (qty[1] === "0") {
-      qty[1] = "";
+    if (qty) {
+        if (qty[1] === "0") {
+            qty[1] = "";
+        }
+    } else {
+        qty = ["", ""];
     }
 
     badge = name + '<span class="badge">' + qty[1] + '</span>';

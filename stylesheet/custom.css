@@ -107,7 +107,7 @@
 
 .navbar-tail {
     float: right;
-    width: 380px;
+    /*width: 380px;*/
     min-height: 50px;
     /*border: 1px solid red;*/
 }
@@ -141,7 +141,7 @@ li.dropdown.fullwidth .dropdown-inner {
 }
 
 li.dropdown.fullwidth .menu-left {
-    position: fixed;
+    position: absolute;
     width: 50px;
     height: 50px;
     border-radius: 25px;
@@ -156,7 +156,7 @@ li.dropdown.fullwidth .menu-left i.material-icons {
 }
 
 li.dropdown.fullwidth .menu-right {
-    position: fixed;
+    position: absolute;
     font-size: 50px;
     width: 50px;
     height: 50px;
@@ -197,6 +197,9 @@ li.dropdown.fullwidth .dropdown-inner > ul > li > a {
     background-size: auto 250px;
     transition: all .3s ease-in-out;
 }
+li.dropdown.fullwidth .dropdown-inner > ul > li.fillend > a {
+    width: 100%;
+}
 li.dropdown.fullwidth .dropdown-inner > ul > li > a:before {
     content: '';
     background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
@@ -217,6 +220,7 @@ li.dropdown.fullwidth .dropdown-inner > ul > li > a:hover {
 }
 li.dropdown.fullwidth .dropdown-inner > ul > li > a span {
     color: black;
+    font-weight: 500;
     display: inline;
     opacity: 1;
 

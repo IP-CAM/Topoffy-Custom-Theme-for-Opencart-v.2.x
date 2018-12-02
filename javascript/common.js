@@ -34,10 +34,10 @@ function updateCartQuantity() {
 
     if (($('#cart-total').text() !== "") && $('#cart-total').text() !== "0") {
         $('#cart-total').css("display", "block");
-        $('#cart_buttons').removeClass('hidden');
+        $('#cart_footer').removeClass('hidden');
     } else {
         $('#cart-total').css("display", "none");
-        $('#cart_buttons').addClass('hidden');
+        $('#cart_footer').addClass('hidden');
     }
 
     let c = $('#cart-sum').text();
@@ -422,10 +422,12 @@ var cart = {
         });
     },
     'update': function (key, quantity) {
+
         $.ajax({
             url: 'index.php?route=checkout/cart/edit',
             type: 'post',
-            data: 'key=' + key + '&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1),
+            data: 'live=1&key=' + key + '&quantity=' + quantity,
+            //data: 'quantity={' + key + '=' + (typeof(quantity) != 'undefined' ? quantity : 1) + '}',
             dataType: 'json',
             beforeSend: function () {
                 $('#cart > button').button('loading');
@@ -437,8 +439,11 @@ var cart = {
 
                 // need to set timeout otherwise it wont update the total
                 setTimeout(function () {
+
                     $('#cart-total').text(json.total);
                     $('#cart-sum').text(json.total);
+
+                    $('#sidebar-cart').load('index.php?route=common/cart/info');
 
                     updateCartQuantity();
 

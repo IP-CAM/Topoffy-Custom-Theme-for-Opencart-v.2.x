@@ -8,7 +8,7 @@
 
 <h2>Корзина</h2>
 
-<form action="" method="post" enctype="multipart/form-data">
+<form method="post" enctype="multipart/form-data" onsubmit="return false;">
   <div class="table-responsive">
     <ul class="sidebar_cart">
       <?php foreach ($products as $product) { ?>
@@ -29,7 +29,14 @@
             <div class="price-change">
                 <div class="price"><?php echo $product['price']; ?></div>
                 <div class="mid">*</div>
-                <input type="text" name="quantity[<?php echo $product['cart_id']; ?>]" value="<?php echo $product['quantity']; ?>" size="1" class="form-control" />
+                <input
+                        type="text"
+                        name="quantity[<?php echo $product['cart_id']; ?>]"
+                        value="<?php echo $product['quantity']; ?>"
+                        size="1"
+                        class="form-control cart-product-quantity"
+                        onchange="cart.update('<?php echo $product['cart_id']; ?>', this.value);"
+                />
                 <div>шт.</div>
             </div>
         </div>
