@@ -250,7 +250,7 @@
     </div>
     <div id="cart_footer" class="inner cart-footer">
         <div id="cart_buttons" class="cart-buttons">
-            <a class="btn btn-block btn-primary btn-xs-block" href="index.php?route=checkout/cart">Оформить заказ</a>
+            <a class="btn btn-block btn-primary btn-xs-block" href="index.php?route=checkout/checkout">Оформить заказ</a>
             <button class="btn btn-block btn-info btn-fastorder" type="button">Купить в один клик</button>
         </div>
         <div class="cart-info">

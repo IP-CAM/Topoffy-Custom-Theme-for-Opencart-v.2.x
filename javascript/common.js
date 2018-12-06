@@ -104,7 +104,6 @@ $(window).load(function () {
 $(document).ready(function () {
 
 
-
     // Scrolling mega menu
     $('.menu-right').each(function () {
         let c = $(this).siblings('.dropdown-inner');
@@ -450,7 +449,8 @@ var cart = {
                 }, 100);
 
                 if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
-                    location = 'index.php?route=checkout/cart';
+                    //location = 'index.php?route=checkout/cart';
+                    location = 'index.php?route=checkout/checkout';
                 } else {
                     $('#cart > ul').load('index.php?route=common/cart/info ul li');
                 }
@@ -492,7 +492,8 @@ var cart = {
                 }, 400);
 
                 if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
-                    location = 'index.php?route=checkout/cart';
+                    //location = 'index.php?route=checkout/cart';
+                    location = 'index.php?route=checkout/checkout';
                 } else {
                     $('#cart > ul').load('index.php?route=common/cart/info ul li');
                 }
