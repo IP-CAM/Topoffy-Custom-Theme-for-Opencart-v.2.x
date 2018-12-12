@@ -1,7 +1,7 @@
 
 <?php if ($products) { ?>
 
-<h2>Корзина</h2>
+<h2><?php echo $text_cart_caption; ?></h2>
 
 <form method="post" enctype="multipart/form-data" onsubmit="return false;">
   <div class="table-responsive">
@@ -47,8 +47,8 @@
 <?php } else { ?>
 
 <div class="empty_cart">
-  <span>Ваша корзина пуста.</span><br/>
-  <span>Добавляйте товар с помощью кнопки "купить"</span>
+  <span><?php echo $text_empty; ?></span><br/>
+  <span><?php echo $text_empty_add; ?></span>
 </div>
 
 <?php }; ?>

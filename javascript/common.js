@@ -127,9 +127,10 @@ $(document).ready(function () {
     $('.menu-right').on('click', function (e) {
         let c = $(this).siblings('.dropdown-inner');
         let s = $(c).scrollLeft();
+        console.log(s);
         s += 390;
         $(c).animate({ scrollLeft: s }, 300, () => {
-            if (s != $(c).scrollLeft()) $(this).addClass('hidden');
+            if (s !== $(c).scrollLeft()) $(this).addClass('hidden');
             if ($(c).scrollLeft() > 0) $(this).siblings('.menu-left').removeClass('hidden');
         });
         //$(c).children('ul.flex')

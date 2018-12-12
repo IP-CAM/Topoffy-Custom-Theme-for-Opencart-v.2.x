@@ -48,7 +48,7 @@
                                 var show_image = <?php echo $live_search_show_image;?>;
                                 var show_price = <?php echo $live_search_show_price;?>;
                                 var show_description = <?php echo $live_search_show_description;?>;
-                                $('.result-text').html('<a href="<?php echo $live_search_href;?>'+filter_name+'" style="display:block;"><?php echo $text_view_all_results;?> ('+result.total+')</a>');
+                                $('.result-text').html('<a href="<?php echo $live_search_href;?>'+filter_name+'" class="btn btn-block btn-info" style="display:block;"><?php echo $text_view_all_results;?> ('+result.total+')</a>');
 
                                 $.each(products, function(index,product) {
                                     var html = '';

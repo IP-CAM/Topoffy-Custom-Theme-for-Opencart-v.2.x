@@ -250,11 +250,11 @@
     </div>
     <div id="cart_footer" class="inner cart-footer">
         <div id="cart_buttons" class="cart-buttons">
-            <a class="btn btn-block btn-primary btn-xs-block" href="index.php?route=checkout/checkout">Оформить заказ</a>
-            <button class="btn btn-block btn-info btn-fastorder" type="button">Купить в один клик</button>
+            <a class="btn btn-block btn-primary btn-xs-block" href="index.php?route=checkout/checkout"><?=$text_checkout?></a>
+            <button class="btn btn-block btn-info btn-fastorder" type="button"><?=$text_oneclick?></button>
         </div>
         <div class="cart-info">
-            Итого:<br/>
+            <?=$text_total?><br/>
             <span id="cart-sum"><?php echo $text_totals; ?></span>
         </div>
     </div>
@@ -265,7 +265,7 @@
     <div class="inner" id="sidebar-cart">
 
     </div>
-    <button class="btn btn-block btn-primary btn-callme" type="button">Отправить</button>
+    <button class="btn btn-block btn-primary btn-callme" type="button"><?=$text_send?>Отправить</button>
 </div>
 
 <div class="sidebar sidebar-fastorder">
@@ -321,7 +321,7 @@
 
         </div>
 
-        <button id="btn-fastcheckout" class="btn btn-block btn-info" type="button">Подтвердить</button>
+        <button id="btn-fastcheckout" class="btn btn-block btn-info" type="button"><?=$text_order_confirm?></button>
 
     </div>
 

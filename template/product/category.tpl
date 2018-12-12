@@ -21,7 +21,7 @@
       <h1><?php echo $heading_title; ?></h1>
       <?php echo $content_top; ?>
       <?php if ($thumb || $description) { ?>
-      <div class="row">
+      <div class="row" style="display: none;">
         <?php if ($thumb) { ?>
         <div class="col-sm-12"><img src="<?php echo $thumb; ?>" alt="<?php echo $heading_title; ?>" title="<?php echo $heading_title; ?>" class="img-responsive" /></div>
         <?php } ?>
