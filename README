@@ -1,130 +1,46 @@
 TODO:
 
- + +  1. добавить слайдер с html блоками(как здесь http://rentwell.ru/)
- + +  2. мега-меню нужно как здесь категория "косметика и парфюмерия" http://standartoptom.ru/
- +   3. меню закрепить на всех страницах, наверх вытащить номер телефона (сейчас закреплено только на категориях)
- + +  В мобильной версии вытащить номер телефона, поиск, корзину, вход в аккаунт (редактировать номер - из настроек)
- + +  4. сделать живой поиск с отображением товара
- + +  5. вкладку личный кабинет подкорректировать
- + +  6. корзину , при нажатии на корзину, чтобы выпадало вкладка как и на поиск и вход.
- +   6a И в этой вкладке были товары и кнопки оформить заказ и заказ в один клик (корзина тоже как здесь http://rentwell.ru/)
- +   7. при добавлении товара в корзину, чтобы была анимация(товар летит в корзину) и добавление в список корзины javascript
- + +  8. и быстрый заказ еще нужно (желательно, чтобы также выпадала вкладка)
- +   9. сделать форму обратной связи (перезвонить)
+ + + 1. Add a slider with HTML blocks (as http://rentwell.ru/)
+ + + 2. Mega-menu needed as a category "Cosmetics and Perfumery" http://standartoptom.ru/
+ + 3. Menu fasten on all pages, pull the phone number upstairs (now enshrined only in categories)
+ + + In the mobile version, pull out the phone number, search, basket, input to the account (edit the number - from the settings)
+ + + 4. Make a live search with the display of goods
+ + + 5. Personal Account Cabinet
+ + + 6. Basket, when you click on the basket, to fall out the tab as and on the search and input.
+ + 6A and in this tab were the goods and buttons to place an order and order in one click (basket, too, as http://rentwell.ru/)
+ + 7. When adding goods to the basket to be an animation (the goods fly to the basket) and adding JavaScript baskets to the list
+ + + 8. And the quick order is still needed (it is desirable that the tab also dropped out)
+ + 9. Make a feedback form (call back)
 
- +  вывести кнопку поиска из меню в хедер, на мобильном
- +   Да и хедер закрепить
+ + display the search button from the menu to Header, mobile
+ + And heder fasten
 
- украсить эффектами блоки в слайдере
- украсить эффектами мегаменю
+ Decorate the effects of blocks in the slider
+ Decorate with megameni effects
 
 
 
- встраивание позиций в макет
+ Embedding positions in the layout
  http://webxeon.ru/opencart/html_infoblock_newposition
- http://loco.ru/materials/562-opencart-2-dobavlyaem-novuyu-poziciyu-v-maket-dlya-vyvoda
- https://toster.ru/q/558400
+ http://loco.ru/materials/562-opencart-2-dobavlyaem-novuyu-poziciyu-v-maket-dlya-vyvoda.
+ https://toster.ru/q/558400.
 
--------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------- ---------------------------------------------------- ---------------------------
 
-Когда добавляем в корзину товар нужно делать reload страницы, либо добавлять в сайдбар с корзиной,
-(обновлять его), потому что получается что он туда не добавится пока страница не обновится
-+ это есть
-
-
-Проверить, как обновляется количество! Количество товара в поле.
-+ не было предусмотрено
-
-В корзине отображение опций, отображение количества,
-+
-
-желательно живое поле с изменяем количества товара.
-+
-
-Чтобы было Итоговая сумма заказ и также
-сделать внизу сумму
-+ (было в исходном задании)
-
-Добавить заголовок "Корзина"
-когда там есть товар
-+
-
-Плавное появление товаров в поиске, соблюдение анимации
-+ доп работа
-
-кнопки, да, чтобы были зафиксированы снизу и при скроллинге большого списка товара,
-в корзине зафиксировать снизу кнопки оформить заказ и купить в один клик
-+ доп работа
+When adding to the basket, the goods need to make RELOAD pages, or add to Sidebar with a basket,
+(update it), because it turns out that it will not be added there until the page is updated
++ it is
 
 
-оригинальный органичный всему сайту ползунок Ползунок для наглядности не в точности такой делать
-скролл в корзине - нестандартный
--+ (тольео хром!)
-какой ползунок?
+Check how the quantity is updated! The number of goods in the field.
++ not provided
 
-Анимация удаления товара как в шаблоне
-плавное удаление из корзины
-+
+In the basket, displaying options, the display of quantity,
++.
 
-в странице поиска не добавляется товар в корзину!
-+ поправил, в шаблоне не добавлялся ид продукта, поэтому не работало
+Preferably a living field with changing the number of goods.
++.
 
-
-кнопка "показать все" в поиске - сделать в дизайне
-+
-
-если скроллить хватая за скролл (в живом поиске)
-товар в поиске пропадает
-+
-
-языковые поля сделать, вынести из шаблона
-заменить вывод адреса - на то что в настройках
-+
-
-common.js
-поправить регулярное выражение, убрать оттуда добавление р. -
-+
-
-Итого - скрывать когда корзина пустая
-+
-
-Подарки - не ставится фоновая картинка
-+
-
-поведение выпадающего меню при тач-событиях
--
-
-раскрытие выпадающего меню на небольших экранах (убрать картинку?)
--
-
-------------------------------------------------------------------------------------------------
-починить быстрый заказ в корзине
-+
-
-убрать корзину (сразу на быстрое оформление заказа)
-+
-
-исправить просмотр категории (убрал картинку и описание)
-+
-
-вставить картинку и ссылку АКЦИИ в верхнее меню, в конец подкатегории
--
-
-скролл принаведении на края для десктопа
--
-
-скролл пальцем на мобильных
--
-
-настроить тач-события для меню
--
-
-раздел контакты!!!!!!!!!!!
--
-
-
-переход из модуля с комплектами в корзину - заменить на оформление
-+
-
-восстановить сайдбар-кнопку "спросить" в товаре! Обратный звонок?????
--
+To be the final amount order and also
+Make below the sum
++ (was in the initial task)
